@@ -25,7 +25,7 @@ g.write(mystring)
 # Because write() is not the same as print()!
 # write() can take only one argument: a string.
 # print() can take multiple string arguments, plus things like sep and end.
-# googoo.write(name, "|||", year, "|||", major)
+# g.write(name, "|||", year, "|||", major)
 
 # Don't forget to close your file!
 g.close()
