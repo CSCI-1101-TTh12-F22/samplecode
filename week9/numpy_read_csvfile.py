@@ -3,8 +3,11 @@ import numpy as np
 # get header labels
 f = open("pretendgrades.csv")
 headers = f.readline().rstrip().split(",")
+
+# delete the first one so we just have headers for quiz #
 headers = headers[1:]
 f.close()
+
 
 # get the names of the students as numpuy array
 names = np.loadtxt("pretendgrades.csv", delimiter=",",
@@ -14,12 +17,15 @@ names = np.loadtxt("pretendgrades.csv", delimiter=",",
 grades = np.loadtxt("pretendgrades.csv", delimiter=",",
            skiprows=1, usecols=(1,2, 3, 4, 5, 6))
 
+# print out the names nicely
 for n in names:
     print(n)
 
+# print out the grades as a matrix for easy viewing
 print(grades)
 
 # access the grade of quiz #5 for person #3
+# you can do this [x][y] or [x,y]
 print(f"The grade for {names[2]} for {headers[4]} is {grades[2][4]}")
 print(f"The grade for {names[2]} for {headers[4]} is {grades[2,4]}")
 
@@ -32,7 +38,7 @@ print(f"The average grade on Quiz #{headers[0]} is {np.mean(grades[:,0]):.2f}")
 
 # print out the average of each quiz
 for m in np.mean(grades, axis=0):
-    print(f"{m:.2f}", end=" ")
+    print(f"Average quiz grades: {m:.2f}", end=" ")
 print()
 
 # print out the quiz average of each person
