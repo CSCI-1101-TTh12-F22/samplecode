@@ -23,9 +23,8 @@ print(  metal["band_name"][np.argmin(metal["formed"])], "is the oldest")
 # Which are the top 5 bands, by numnber of fans?
 print("\nThese bands have the most fans: ", end=" ")
 mostfans = np.array(np.argsort(metal["fans"]))
-for i in range(-1, -6, -1):
-    print(metal["band_name"][mostfans[i]], end=" ")
-print("\n")
+print(metal["band_name"][mostfans[-6:]])
 
+# Who are the bands from Sweden?
 swedish = metal[metal["origin"] == "Sweden"]
 print("Here is a list of Swedish metal bands:", list(swedish["band_name"]))
