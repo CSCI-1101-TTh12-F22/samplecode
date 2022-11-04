@@ -12,6 +12,7 @@ metal = pd.read_csv("metal587.csv")
 print("There are,", len(metal), "bands in the dataset.")    
 print("These are the characteristics:", metal.columns)
 print("Here's the 27th band on the list:", metal["band_name"][26])
+print("Here's the 27th band on the list:", metal["band_name"].iloc[26])
 
 
 # which band has the most fans?
